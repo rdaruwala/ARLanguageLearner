@@ -1,0 +1,6 @@
+framework module Pods_ARLanguageLearning {
+  umbrella header "Pods-ARLanguageLearning-umbrella.h"
+
+  export *
+  module * { export * }
+}

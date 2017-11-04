@@ -16,6 +16,10 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Use photo library to save screenshots as a test to confirm functionality.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Use photo library to save screenshots as a test to confirm functionality.</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>

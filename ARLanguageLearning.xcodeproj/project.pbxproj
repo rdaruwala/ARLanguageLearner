@@ -16,6 +16,8 @@
 		CC9A829D1FADAD4800AB7F54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9A829B1FADAD4800AB7F54 /* LaunchScreen.storyboard */; };
 		CC9A82A81FADAD4900AB7F54 /* ARLanguageLearningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9A82A71FADAD4900AB7F54 /* ARLanguageLearningTests.swift */; };
 		CC9A82B31FADAD4900AB7F54 /* ARLanguageLearningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9A82B21FADAD4900AB7F54 /* ARLanguageLearningUITests.swift */; };
+		CC9A82C21FADB7F900AB7F54 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC9A82C01FADB7F900AB7F54 /* Model.xcdatamodeld */; };
+		F71BDDDB533C27D3A32BCA7B /* Pods_ARLanguageLearning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D91EC3D58C3AF0D30ED8F12 /* Pods_ARLanguageLearning.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D91EC3D58C3AF0D30ED8F12 /* Pods_ARLanguageLearning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARLanguageLearning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADA159F799CFA86A204C5B62 /* Pods-ARLanguageLearning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARLanguageLearning.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARLanguageLearning/Pods-ARLanguageLearning.release.xcconfig"; sourceTree = "<group>"; };
+		CB9C24E1A5C730AF081216FC /* Pods-ARLanguageLearning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARLanguageLearning.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARLanguageLearning/Pods-ARLanguageLearning.debug.xcconfig"; sourceTree = "<group>"; };
 		CC9A828B1FADAD4800AB7F54 /* ARLanguageLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARLanguageLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9A828E1FADAD4800AB7F54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC9A82901FADAD4800AB7F54 /* Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene.sks; sourceTree = "<group>"; };
@@ -51,6 +56,7 @@
 		CC9A82AE1FADAD4900AB7F54 /* ARLanguageLearningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARLanguageLearningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9A82B21FADAD4900AB7F54 /* ARLanguageLearningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARLanguageLearningUITests.swift; sourceTree = "<group>"; };
 		CC9A82B41FADAD4900AB7F54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC9A82C11FADB7F900AB7F54 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F71BDDDB533C27D3A32BCA7B /* Pods_ARLanguageLearning.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41E2FFE6986F5E50EB9C5C3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D91EC3D58C3AF0D30ED8F12 /* Pods_ARLanguageLearning.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7247B1DB86DD640558646725 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB9C24E1A5C730AF081216FC /* Pods-ARLanguageLearning.debug.xcconfig */,
+				ADA159F799CFA86A204C5B62 /* Pods-ARLanguageLearning.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CC9A82821FADAD4800AB7F54 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +109,8 @@
 				CC9A82A61FADAD4900AB7F54 /* ARLanguageLearningTests */,
 				CC9A82B11FADAD4900AB7F54 /* ARLanguageLearningUITests */,
 				CC9A828C1FADAD4800AB7F54 /* Products */,
+				7247B1DB86DD640558646725 /* Pods */,
+				41E2FFE6986F5E50EB9C5C3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +127,7 @@
 		CC9A828D1FADAD4800AB7F54 /* ARLanguageLearning */ = {
 			isa = PBXGroup;
 			children = (
+				CC9A82C01FADB7F900AB7F54 /* Model.xcdatamodeld */,
 				CC9A828E1FADAD4800AB7F54 /* AppDelegate.swift */,
 				CC9A82901FADAD4800AB7F54 /* Scene.sks */,
 				CC9A82921FADAD4800AB7F54 /* Scene.swift */,
@@ -138,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC9A82B71FADAD4900AB7F54 /* Build configuration list for PBXNativeTarget "ARLanguageLearning" */;
 			buildPhases = (
+				51AA7E40943E24317ADC4999 /* [CP] Check Pods Manifest.lock */,
 				CC9A82871FADAD4800AB7F54 /* Sources */,
 				CC9A82881FADAD4800AB7F54 /* Frameworks */,
 				CC9A82891FADAD4800AB7F54 /* Resources */,
+				FD2399B35530A107900BC7A0 /* [CP] Embed Pods Frameworks */,
+				4A2951FB100F55628F02A341 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,6 +291,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4A2951FB100F55628F02A341 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARLanguageLearning/Pods-ARLanguageLearning-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51AA7E40943E24317ADC4999 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARLanguageLearning-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD2399B35530A107900BC7A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ARLanguageLearning/Pods-ARLanguageLearning-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ROGoogleTranslate/ROGoogleTranslate.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ROGoogleTranslate.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARLanguageLearning/Pods-ARLanguageLearning-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CC9A82871FADAD4800AB7F54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -269,6 +355,7 @@
 				CC9A82951FADAD4800AB7F54 /* ViewController.swift in Sources */,
 				CC9A82931FADAD4800AB7F54 /* Scene.swift in Sources */,
 				CC9A828F1FADAD4800AB7F54 /* AppDelegate.swift in Sources */,
+				CC9A82C21FADB7F900AB7F54 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,10 +519,13 @@
 		};
 		CC9A82B81FADAD4900AB7F54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB9C24E1A5C730AF081216FC /* Pods-ARLanguageLearning.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7XX28T224D;
 				INFOPLIST_FILE = ARLanguageLearning/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = roholiver.products.ARLanguageLearning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -446,10 +536,13 @@
 		};
 		CC9A82B91FADAD4900AB7F54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADA159F799CFA86A204C5B62 /* Pods-ARLanguageLearning.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7XX28T224D;
 				INFOPLIST_FILE = ARLanguageLearning/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = roholiver.products.ARLanguageLearning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -560,6 +653,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CC9A82C01FADB7F900AB7F54 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CC9A82C11FADB7F900AB7F54 /* Model.xcdatamodel */,
+			);
+			currentVersion = CC9A82C11FADB7F900AB7F54 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CC9A82831FADAD4800AB7F54 /* Project object */;
 }

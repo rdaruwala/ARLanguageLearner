@@ -1,0 +1,1 @@
+{"object": {"dependencies": [{"basedOn": null, "name": "SwiftyJSON", "repositoryURL": "https://github.com/SwiftyJSON/SwiftyJSON.git", "state": {"checkoutState": {"branch": null, "revision": "dadbfcffd5f51e2b488a26e83f188d96755e5393", "version": "3.1.4"}, "name": "checkout"}, "subpath": "SwiftyJSON.git-3043514560129222422"}]}, "version": 1}
