@@ -13,6 +13,12 @@ import CoreData
 import SwiftyJSON
 import ROGoogleTranslate
 
+class LanguageHolder {
+    static var fromLang = "en"
+    static var toLang = "es"
+    static var database:[SKLabelNode:[String]] = [:]
+    static var nodeList:[SKLabelNode] = []
+}
 class ViewController: UIViewController, ARSKViewDelegate {
     
     @IBOutlet var sceneView: ARSKView!
@@ -28,9 +34,14 @@ class ViewController: UIViewController, ARSKViewDelegate {
     
     var tempVar:[String] = []
     
-    var database:[SKLabelNode:[String]] = [:]
+    
     
     var translator = ROGoogleTranslate()
+    
+    var fromLanguage:String = ""
+    var toLanguage:String = ""
+
+    
     
     var googleAPIKey = "AIzaSyB0bpWxewvKCrjqFEJlgufARdUl3VVKDH0"
     var googleURL: URL {
@@ -39,6 +50,9 @@ class ViewController: UIViewController, ARSKViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeUp.direction = UISwipeGestureRecognizerDirection.up
+        self.view.addGestureRecognizer(swipeUp)
         
         // Set the view's delegate
         sceneView.delegate = self
@@ -55,10 +69,48 @@ class ViewController: UIViewController, ARSKViewDelegate {
         scene = SKScene(fileNamed: "Scene")!
         sceneView.presentScene(scene)
         
-        defaults.set("Hello World", forKey: "test")
-        defaults.synchronize()
+        //fromLanguage = "en"
+        //toLanguage = "es"
+        fromLanguage = LanguageHolder.fromLang
+        toLanguage = LanguageHolder.toLang
         
         translator.apiKey = "AIzaSyB0bpWxewvKCrjqFEJlgufARdUl3VVKDH0"
+    }
+    
+
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.right:
+                print("Swiped right")
+            case UISwipeGestureRecognizerDirection.down:
+                print("Swiped down")
+            case UISwipeGestureRecognizerDirection.left:
+                print("Swiped left")
+            case UISwipeGestureRecognizerDirection.up:
+                print("Swiped up")
+                self.performSegue(withIdentifier: "settings", sender: self)
+            default:
+                break
+            }
+        }
+    }
+    
+    @objc func buttonAction(sender: UIButton!) {
+        self.performSegue(withIdentifier: "settings", sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "settings"){
+            let next = segue.destination as! SettingsViewController
+            
+//            next.fromLanguage = self.fromLanguage //"en"
+//            next.toLanguage = self.toLanguage //"es"
+            
+            next.fromLanguage = LanguageHolder.fromLang
+            next.toLanguage = LanguageHolder.toLang
+        }
     }
     
     
@@ -77,6 +129,9 @@ class ViewController: UIViewController, ARSKViewDelegate {
             let anchor = ARAnchor(transform: transform)
             sceneView.session.add(anchor: anchor)
         }
+        let screenSize = UIScreen.main.bounds
+        let sWidth = screenSize.width
+        let sHeight = screenSize.height
     }
     
     
@@ -120,6 +175,7 @@ class ViewController: UIViewController, ARSKViewDelegate {
         //labelNode.toggleBoldface(self)
         labelNode.horizontalAlignmentMode = .center
         labelNode.verticalAlignmentMode = .center
+        LanguageHolder.nodeList.append(labelNode)
         return labelNode;
     }
     
@@ -174,39 +230,6 @@ extension ViewController {
                 // Parse the response
                 print(json)
                 let responses: JSON = json["responses"][0]
-                
-                // Get face annotations
-                let faceAnnotations: JSON = responses["faceAnnotations"]
-                if faceAnnotations != nil {
-                    let emotions: Array<String> = ["joy", "sorrow", "surprise", "anger"]
-                    
-                    let numPeopleDetected:Int = faceAnnotations.count
-                    
-                   // self.faceResults.text = "People detected: \(numPeopleDetected)\n\nEmotions detected:\n"
-                    
-                    var emotionTotals: [String: Double] = ["sorrow": 0, "joy": 0, "surprise": 0, "anger": 0]
-                    var emotionLikelihoods: [String: Double] = ["VERY_LIKELY": 0.9, "LIKELY": 0.75, "POSSIBLE": 0.5, "UNLIKELY":0.25, "VERY_UNLIKELY": 0.0]
-                    
-                    for index in 0..<numPeopleDetected {
-                        let personData:JSON = faceAnnotations[index]
-                        
-                        // Sum all the detected emotions
-                        for emotion in emotions {
-                            let lookup = emotion + "Likelihood"
-                            let result:String = personData[lookup].stringValue
-                            emotionTotals[emotion]! += emotionLikelihoods[result]!
-                        }
-                    }
-                    // Get emotion likelihood as a % and display in UI
-                    for (emotion, total) in emotionTotals {
-                        let likelihood:Double = total / Double(numPeopleDetected)
-                        let percent: Int = Int(round(likelihood * 100))
-                        //self.faceResults.text! += "\(emotion): \(percent)%\n"
-                    }
-                } else {
-                    //self.faceResults.text = "No faces found"
-                }
-                
                 // Get label annotations
                 let labelAnnotations: JSON = responses["labelAnnotations"]
                 var labels: Array<String> = []
@@ -228,10 +251,10 @@ extension ViewController {
                     //self.labelResults.text = labelResultsText
                     print(labelResultsText)
                     print("HELLLLOOOOO")
-                    self.database[node] = labels
+                    LanguageHolder.database[node] = labels
                     print(labels)
-                    var lang = "es"
-                    self.translate(sourceLang: "en", targetLang: lang, text: labels[0], node: node)
+//                    self.translate(sourceLang: self.fromLanguage, targetLang: self.toLanguage, text: labels[0], node: node)
+                    self.translate(sourceLang: LanguageHolder.fromLang, targetLang: LanguageHolder.toLang, text: labels[0], node: node)
                     
                 } else {
                     //self.labelResults.text = "No labels found"
@@ -243,12 +266,24 @@ extension ViewController {
     }
     
     func translate(sourceLang: String, targetLang: String, text: String, node:SKLabelNode) {
-        var params = ROGoogleTranslateParams(source: sourceLang, target: targetLang, text:  text)
-        self.translator.translate(params: params) { (result) in
-            print("Translation: \(result)")
-            node.text = result + " (" + text + ")"
+        var params = ROGoogleTranslateParams(source: "en", target: targetLang, text:  text)
+        self.translator.translate(params: params) { (trans) in
+            print("Translate To Translation: \(trans)")
+            
+            if(sourceLang != "en"){
+                var params2 = ROGoogleTranslateParams(source: "en", target: sourceLang, text:  text)
+                
+                self.translator.translate(params: params2) { (ref) in
+                    node.text = trans + " (" + ref + ")"
+                }
+            }
+            else{
+                node.text = trans + " (" + text + ")"
+            }
+            
         }
     }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
 //            imageView.contentMode = .scaleAspectFit
