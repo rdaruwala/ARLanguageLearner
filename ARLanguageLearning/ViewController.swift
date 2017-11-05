@@ -34,8 +34,6 @@ class ViewController: UIViewController, ARSKViewDelegate {
     
     var tempVar:[String] = []
     
-    
-    
     var translator = ROGoogleTranslate()
     
     var fromLanguage:String = ""
@@ -77,7 +75,18 @@ class ViewController: UIViewController, ARSKViewDelegate {
         translator.apiKey = "AIzaSyB0bpWxewvKCrjqFEJlgufARdUl3VVKDH0"
     }
     
-
+    @IBAction func onLongPress(_ sender: Any) {
+        print("Long press detected, resetting...")
+        
+        for obj in LanguageHolder.nodeList{
+            obj.removeFromParent()
+        }
+        
+        LanguageHolder.database.removeAll()
+        LanguageHolder.nodeList.removeAll()
+        
+    }
+    
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {

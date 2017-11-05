@@ -20,6 +20,7 @@
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="g7g-ad-lGC" appends="YES" id="mix-1O-tJh"/>
+                            <outletCollection property="gestureRecognizers" destination="QIU-BC-B62" appends="YES" id="Bdt-1n-xNI"/>
                         </connections>
                     </arskView>
                     <connections>
@@ -34,6 +35,11 @@
                         <action selector="onTap:" destination="BV1-FR-VrT" id="e73-Id-FJf"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="QIU-BC-B62">
+                    <connections>
+                        <action selector="onLongPress:" destination="BV1-FR-VrT" id="e8G-BO-5ku"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="143" y="152"/>
         </scene>

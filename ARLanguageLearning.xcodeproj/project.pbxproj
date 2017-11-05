@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CC109C5C1FAE5CDF00850FBF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC109C5B1FAE5CDF00850FBF /* SettingsViewController.swift */; };
+		CC847FEC1FAF071800C2C78B /* ARLearner icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC847FEB1FAF071800C2C78B /* ARLearner icon.jpg */; };
 		CC9A828F1FADAD4800AB7F54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9A828E1FADAD4800AB7F54 /* AppDelegate.swift */; };
 		CC9A82911FADAD4800AB7F54 /* Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CC9A82901FADAD4800AB7F54 /* Scene.sks */; };
 		CC9A82931FADAD4800AB7F54 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9A82921FADAD4800AB7F54 /* Scene.swift */; };
@@ -43,7 +44,8 @@
 		ADA159F799CFA86A204C5B62 /* Pods-ARLanguageLearning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARLanguageLearning.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARLanguageLearning/Pods-ARLanguageLearning.release.xcconfig"; sourceTree = "<group>"; };
 		CB9C24E1A5C730AF081216FC /* Pods-ARLanguageLearning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARLanguageLearning.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARLanguageLearning/Pods-ARLanguageLearning.debug.xcconfig"; sourceTree = "<group>"; };
 		CC109C5B1FAE5CDF00850FBF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = /Users/rdaruwala/Desktop/ARLanguageLearning/ARLanguageLearning/SettingsViewController.swift; sourceTree = "<absolute>"; };
-		CC9A828B1FADAD4800AB7F54 /* ARLanguageLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARLanguageLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC847FEB1FAF071800C2C78B /* ARLearner icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ARLearner icon.jpg"; path = "Assets.xcassets/AppIcon.appiconset/ARLearner icon.jpg"; sourceTree = "<group>"; };
+		CC9A828B1FADAD4800AB7F54 /* VisualLearner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualLearner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9A828E1FADAD4800AB7F54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC9A82901FADAD4800AB7F54 /* Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene.sks; sourceTree = "<group>"; };
 		CC9A82921FADAD4800AB7F54 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
@@ -119,7 +121,7 @@
 		CC9A828C1FADAD4800AB7F54 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CC9A828B1FADAD4800AB7F54 /* ARLanguageLearning.app */,
+				CC9A828B1FADAD4800AB7F54 /* VisualLearner.app */,
 				CC9A82A31FADAD4900AB7F54 /* ARLanguageLearningTests.xctest */,
 				CC9A82AE1FADAD4900AB7F54 /* ARLanguageLearningUITests.xctest */,
 			);
@@ -137,6 +139,7 @@
 				CC109C5B1FAE5CDF00850FBF /* SettingsViewController.swift */,
 				CC9A82961FADAD4800AB7F54 /* Main.storyboard */,
 				CC9A82991FADAD4800AB7F54 /* Assets.xcassets */,
+				CC847FEB1FAF071800C2C78B /* ARLearner icon.jpg */,
 				CC9A829B1FADAD4800AB7F54 /* LaunchScreen.storyboard */,
 				CC9A829E1FADAD4800AB7F54 /* Info.plist */,
 			);
@@ -181,7 +184,7 @@
 			);
 			name = ARLanguageLearning;
 			productName = ARLanguageLearning;
-			productReference = CC9A828B1FADAD4800AB7F54 /* ARLanguageLearning.app */;
+			productReference = CC9A828B1FADAD4800AB7F54 /* VisualLearner.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CC9A82A21FADAD4900AB7F54 /* ARLanguageLearningTests */ = {
@@ -274,6 +277,7 @@
 				CC9A82911FADAD4800AB7F54 /* Scene.sks in Resources */,
 				CC9A829D1FADAD4800AB7F54 /* LaunchScreen.storyboard in Resources */,
 				CC9A829A1FADAD4800AB7F54 /* Assets.xcassets in Resources */,
+				CC847FEC1FAF071800C2C78B /* ARLearner icon.jpg in Resources */,
 				CC9A82981FADAD4800AB7F54 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,7 +536,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = roholiver.products.ARLanguageLearning;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = VisualLearner;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -549,7 +553,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = roholiver.products.ARLanguageLearning;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = VisualLearner;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
